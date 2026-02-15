@@ -1,7 +1,7 @@
 import buildingImg from "../assets/building.png";
 import logoImg from "../assets/logo.png";
 
-function Hero() {
+function Hero({ data }) {
   return (
     <section id="home" className="hero">
       <div className="hero-grid">
@@ -34,7 +34,8 @@ function Hero() {
             <div className="price-block">
               <p>SMART 1 BHK</p>
               <h2>
-                <span className="old-price">74.99 Lacs</span>₹ 69.99 Lacs*
+                <span className="old-price">{data.price1Old}</span>
+                {data.price1}
               </h2>
               <span>onwards</span>
             </div>
@@ -44,7 +45,8 @@ function Hero() {
             <div className="price-block">
               <p>PREMIUM 2 BHK</p>
               <h2>
-                <span className="old-price">1.05 Cr</span>₹ 96.99 Lacs*
+                <span className="old-price">{data.price2Old}</span>
+                {data.price2}
               </h2>
               <span>onwards</span>
             </div>
@@ -69,10 +71,8 @@ function Hero() {
               </svg>
 
               <div className="location-text">
-                <div className="address-line1">BLDG. NO. 223/224,</div>
-                <div className="address-line2">
-                  CIRCLE - KANNAMWAR NAGAR 1, VIKHROLI (EAST)
-                </div>
+                <div className="address-line1">{data.locationLine1}</div>
+                <div className="address-line2">{data.locationLine2}</div>
               </div>
             </div>
           </div>

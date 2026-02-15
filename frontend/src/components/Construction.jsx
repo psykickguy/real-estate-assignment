@@ -2,12 +2,11 @@ import c1 from "../assets/construction1.png";
 import c2 from "../assets/construction2.png";
 import c3 from "../assets/construction3.png";
 
-function Construction() {
-  const updates = [
-    { title: "Under Construction", tower: "Tower A", img: c1 },
-    { title: "Completed", tower: "Tower B", img: c2 },
-    { title: "Completed", tower: "Tower C", img: c3 },
-  ];
+function Construction({ data }) {
+  // Static images (images are not editable via CMS)
+  const images = [c1, c2, c3];
+
+  if (!data) return null;
 
   return (
     <section id="constructionupdates" className="construction-section">
@@ -15,12 +14,12 @@ function Construction() {
         <h2>Construction Updates</h2>
 
         <div className="construction-grid">
-          {updates.map((item, i) => (
-            <div key={i} className="construction-card">
-              <img src={item.img} alt={item.tower} />
+          {data.map((item, i) => (
+            <div key={item._id} className="construction-card">
+              <img src={images[i]} alt={item.phase} />
               <div className="construction-overlay">
-                <h4>{item.title}</h4>
-                <p>{item.tower}</p>
+                <h4>{item.status}</h4>
+                <p>{item.phase}</p>
                 <span>Know More</span>
               </div>
             </div>

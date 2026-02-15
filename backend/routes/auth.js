@@ -8,7 +8,9 @@ router.post("/login", (req, res) => {
     return res.json({ success: true });
   }
 
-  res.status(401).json({ success: false, message: "Invalid credentials" });
+  return res
+    .status(401)
+    .json({ success: false, message: "Invalid credentials" });
 });
 
 export default router;

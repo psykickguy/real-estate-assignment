@@ -8,12 +8,12 @@ function AdminDashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/content")
+      .get("http://localhost:8080/content")
       .then((res) => setContent(res.data || {}));
   }, []);
 
   const handleSave = async () => {
-    await axios.put("http://localhost:5000/api/content", content);
+    await axios.put("http://localhost:8080/content", content);
     alert("Content Updated!");
   };
 
@@ -27,6 +27,7 @@ function AdminDashboard() {
         {section === "hero" && (
           <>
             <input
+              placeholder="Title"
               value={content?.hero?.title || ""}
               onChange={(e) =>
                 setContent({
@@ -35,6 +36,154 @@ function AdminDashboard() {
                 })
               }
             />
+
+            <input
+              placeholder="Tagline"
+              value={content?.hero?.tagline || ""}
+              onChange={(e) =>
+                setContent({
+                  ...content,
+                  hero: { ...content.hero, tagline: e.target.value },
+                })
+              }
+            />
+
+            <input
+              placeholder="Price 1"
+              value={content?.hero?.price1 || ""}
+              onChange={(e) =>
+                setContent({
+                  ...content,
+                  hero: { ...content.hero, price1: e.target.value },
+                })
+              }
+            />
+
+            <input
+              placeholder="Price 2"
+              value={content?.hero?.price2 || ""}
+              onChange={(e) =>
+                setContent({
+                  ...content,
+                  hero: { ...content.hero, price2: e.target.value },
+                })
+              }
+            />
+
+            <input
+              placeholder="Location"
+              value={content?.hero?.location || ""}
+              onChange={(e) =>
+                setContent({
+                  ...content,
+                  hero: { ...content.hero, location: e.target.value },
+                })
+              }
+            />
+          </>
+        )}
+        {section === "aboutProject" && (
+          <>
+            <textarea
+              placeholder="About Description"
+              value={content?.aboutProject?.description || ""}
+              onChange={(e) =>
+                setContent({
+                  ...content,
+                  aboutProject: {
+                    ...content.aboutProject,
+                    description: e.target.value,
+                  },
+                })
+              }
+            />
+          </>
+        )}
+        {section === "amenities" && (
+          <>
+            <input
+              placeholder="Heading"
+              value={content?.amenities?.heading || ""}
+              onChange={(e) =>
+                setContent({
+                  ...content,
+                  amenities: {
+                    ...content.amenities,
+                    heading: e.target.value,
+                  },
+                })
+              }
+            />
+
+            {content?.amenities?.items?.map((item, i) => (
+              <input
+                key={i}
+                value={item.title}
+                onChange={(e) => {
+                  const updatedItems = [...content.amenities.items];
+                  updatedItems[i].title = e.target.value;
+
+                  setContent({
+                    ...content,
+                    amenities: {
+                      ...content.amenities,
+                      items: updatedItems,
+                    },
+                  });
+                }}
+              />
+            ))}
+          </>
+        )}
+        {section === "constructionUpdates" && (
+          <>
+            {content?.constructionUpdates?.map((item, i) => (
+              <div key={i}>
+                <input
+                  value={item.phase}
+                  onChange={(e) => {
+                    const updated = [...content.constructionUpdates];
+                    updated[i].phase = e.target.value;
+                    setContent({ ...content, constructionUpdates: updated });
+                  }}
+                />
+
+                <input
+                  value={item.status}
+                  onChange={(e) => {
+                    const updated = [...content.constructionUpdates];
+                    updated[i].status = e.target.value;
+                    setContent({ ...content, constructionUpdates: updated });
+                  }}
+                />
+              </div>
+            ))}
+          </>
+        )}
+
+        {section === "faqs" && (
+          <>
+            {content?.faqs?.map((item, i) => (
+              <div key={i}>
+                <input
+                  value={item.question}
+                  onChange={(e) => {
+                    const updated = [...content.faqs];
+                    updated[i].question = e.target.value;
+                    setContent({ ...content, faqs: updated });
+                  }}
+                />
+
+                <textarea
+                  value={item.answer}
+                  onChange={(e) => {
+                    const updated = [...content.faqs];
+                    updated[i].answer = e.target.value;
+                    setContent({ ...content, faqs: updated });
+                  }}
+                />
+              </div>
+            ))}
           </>
         )}
 

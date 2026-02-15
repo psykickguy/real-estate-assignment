@@ -2,7 +2,7 @@ import mainImg from "../assets/about-main.png";
 import smallImg1 from "../assets/about-small1.png";
 import smallImg2 from "../assets/about-small2.png";
 
-function AboutProject() {
+function AboutProject({ data }) {
   return (
     <section id="overview" className="about-section">
       <div className="container about-wrapper">
@@ -24,22 +24,7 @@ function AboutProject() {
         {/* RIGHT CONTENT */}
         <div className="about-content">
           <h2>About Project</h2>
-
-          <p>
-            At Vighnaharta Enclave, every detail reflects the grandest gesture
-            of life in the most authentic and desirable home. Guided by a
-            humanist approach, the architecture places people at the heart of
-            the space. Built on the foundations of comfort, it evokes a true
-            sense of freedom, protection, and belonging.
-          </p>
-
-          <p>
-            “The moment I entered the house, it felt welcomed” — this feeling
-            defines the privilege Vighnaharta Enclave offers. Thoughtfully
-            designed with crafted amenities and timeless choices, the space
-            resonates with the warmth and authenticity that you and your family
-            truly deserve. It’s the place your soul has long been searching for.
-          </p>
+          <p>{data?.description}</p>
 
           <button className="btn brochure-btn">Download Brochure</button>
         </div>

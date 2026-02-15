@@ -20,12 +20,16 @@ const contentSchema = new mongoose.Schema({
     },
   ],
 
-  amenities: [
-    {
-      title: String,
-      description: String,
-    },
-  ],
+  amenities: {
+    heading: String,
+    subtitle: String,
+    buttonText: String,
+    items: [
+      {
+        title: String,
+      },
+    ],
+  },
 
   constructionUpdates: [
     {
