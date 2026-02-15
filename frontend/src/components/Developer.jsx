@@ -8,7 +8,7 @@ function Developer() {
   ];
 
   return (
-    <section className="developer-section">
+    <section id="aboutus" className="developer-section">
       <div className="container">
         <h2>About Developer</h2>
 

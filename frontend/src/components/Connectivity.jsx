@@ -9,7 +9,7 @@ function Connectivity() {
   ];
 
   return (
-    <section id="connectivity" className="connectivity-section">
+    <section id="connectivities" className="connectivity-section">
       <div className="container">
         <h2 className="connectivity-title">Nearby Connectivity</h2>
         <p className="connectivity-subtitle">

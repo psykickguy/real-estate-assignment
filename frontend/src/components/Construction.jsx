@@ -10,7 +10,7 @@ function Construction() {
   ];
 
   return (
-    <section className="construction-section">
+    <section id="constructionupdates" className="construction-section">
       <div className="container">
         <h2>Construction Updates</h2>
 

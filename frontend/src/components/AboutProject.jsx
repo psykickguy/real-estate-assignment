@@ -4,7 +4,7 @@ import smallImg2 from "../assets/about-small2.png";
 
 function AboutProject() {
   return (
-    <section id="about" className="about-section">
+    <section id="overview" className="about-section">
       <div className="container about-wrapper">
         {/* LEFT IMAGE SIDE */}
         <div className="about-visual">

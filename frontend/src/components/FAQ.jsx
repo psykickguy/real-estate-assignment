@@ -27,7 +27,7 @@ function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
   return (
-    <section className="faq-section">
+    <section id="faq" className="faq-section">
       <div className="container">
         <h2>Frequently Asked Questions</h2>
 
