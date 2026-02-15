@@ -178,16 +178,86 @@
   letter-spacing: 0.5px;
 }
 
-.about-grid {
+/* ================= ABOUT SECTION ================= */
+
+.about-section {
+  background: #d7e8e5;
+  padding: 100px 0;
+}
+
+.about-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  align-items: center;
+  gap: 60px;
+}
+
+/* LEFT SIDE IMAGES */
+
+.about-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 
-.about-image img {
-  width: 300px;
+.circle-main {
+  width: 380px;
+  height: 380px;
   border-radius: 50%;
+  overflow: hidden;
+}
+
+.circle-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circle-small {
+  position: absolute;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 6px solid #d7e8e5;
+}
+
+.circle-small img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.circle-small.top {
+  top: -30px;
+  left: 40px;
+}
+
+.circle-small.bottom {
+  bottom: -20px;
+  right: 30px;
+}
+
+/* RIGHT SIDE CONTENT */
+
+.about-content h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.about-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.brochure-btn {
+  margin-top: 20px;
+  background: #8fd45a;
+  color: black;
+  font-weight: bold;
 }
 
 .amenities {
