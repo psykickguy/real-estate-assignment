@@ -1,4 +1,5 @@
 import Hero from "../components/Hero";
+import Navbar from "../components/Navbar";
 import AboutProject from "../components/AboutProject";
 import Amenities from "../components/Amenities";
 // import Connectivity from "../components/Connectivity";
@@ -9,6 +10,7 @@ import Construction from "../components/Construction";
 function Home() {
   return (
     <>
+      <Navbar />
       <Hero />
       <AboutProject />
       {/* <Connectivity /> */}

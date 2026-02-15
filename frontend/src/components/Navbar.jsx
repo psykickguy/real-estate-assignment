@@ -2,14 +2,21 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="container nav-content">
-        <h2>INFINITY</h2>
-        <div className="nav-links">
-          <a href="#about">About</a>
-          <a href="#amenities">Amenities</a>
-          <a href="#construction">Updates</a>
-          <a href="#faq">FAQ</a>
+        <div className="logo">
+          <img src="/logo.png" alt="Logo" />
         </div>
-        <button className="btn">Enquire</button>
+
+        <div className="nav-links">
+          <a href="#">Home</a>
+          <a href="#">Overview</a>
+          <a href="#">Connectivities</a>
+          <a href="#">Amenities</a>
+          <a href="#">Floor Plans</a>
+          <a href="#">Developer</a>
+          <a href="#">Contact</a>
+        </div>
+
+        <button className="btn enquiry-btn">Enquiry Now</button>
       </div>
     </nav>
   );
