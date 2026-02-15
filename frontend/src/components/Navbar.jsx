@@ -1,9 +1,11 @@
+import logoImg from "../assets/main-logo.png";
+
 function Navbar() {
   return (
     <nav className="navbar">
       <div className="container nav-content">
         <div className="logo">
-          <img src="/logo.png" alt="Logo" />
+          <img src={logoImg} alt="Logo" />
         </div>
 
         <div className="nav-links">
