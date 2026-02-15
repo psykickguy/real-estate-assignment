@@ -2,7 +2,7 @@ import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import AboutProject from "../components/AboutProject";
 import Amenities from "../components/Amenities";
-// import Connectivity from "../components/Connectivity";
+import Connectivity from "../components/Connectivity";
 import Construction from "../components/Construction";
 // import FAQ from "../components/FAQ";
 // import Developer from "../components/Developer";
@@ -13,7 +13,7 @@ function Home() {
       <Navbar />
       <Hero />
       <AboutProject />
-      {/* <Connectivity /> */}
+      <Connectivity />
       <Amenities />
       <Construction />
       {/* <Developer /> */}

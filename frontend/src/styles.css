@@ -364,3 +364,51 @@
   color: black;
   font-weight: bold;
 }
+
+/* ================= CONNECTIVITY SECTION ================= */
+
+.connectivity-section {
+  padding: 100px 0;
+  background: white;
+  text-align: center;
+}
+
+.connectivity-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.connectivity-subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.connectivity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.connectivity-card {
+  background: #f3f7f6;
+  padding: 25px;
+  border-radius: 12px;
+  transition: 0.3s ease;
+}
+
+.connectivity-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.connectivity-card h4 {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.connectivity-card span {
+  font-size: 13px;
+  color: #2aa38b;
+  font-weight: bold;
+}
