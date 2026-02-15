@@ -260,34 +260,81 @@
   font-weight: bold;
 }
 
-.amenities {
-  background: #d7f0ea;
+/* ================= AMENITIES SECTION ================= */
+
+.amenities-section {
+  background: #d7e8e5;
+  padding: 100px 0;
+  text-align: left;
 }
 
-.amenities-grid {
+.amenities-title {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.amenities-subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 50px;
+}
+
+.amenities-wrapper {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  gap: 60px;
   align-items: center;
 }
 
-.amenities img {
+.amenities-image img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 18px;
 }
 
-.amenities-list {
+/* RIGHT SIDE GRID */
+
+.amenities-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
-  margin-top: 20px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  align-items: center;
 }
 
 .amenity-card {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
   text-align: center;
+}
+
+.icon-circle {
+  width: 90px;
+  height: 90px;
+  background: #eaf5f3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-size: 30px;
+  color: #2aa38b;
+  margin-bottom: 12px;
+}
+
+.amenity-card p {
+  font-size: 14px;
+  color: #333;
+}
+
+/* VIEW MORE BUTTON */
+
+.view-btn {
+  grid-column: span 3;
+  justify-self: center;
+  margin-top: 20px;
+  padding: 8px 22px;
+  border-radius: 6px;
+  background: linear-gradient(to right, #7ed957, #9be15d);
+  border: none;
+  font-size: 13px;
+  cursor: pointer;
 }
 
 .construction {
