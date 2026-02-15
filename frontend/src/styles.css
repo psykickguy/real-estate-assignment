@@ -168,16 +168,16 @@
   text-align: center;
 }
 
-.address-line1 {
+.address-line {
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-.address-line2 {
+/* .address-line2 {
   font-size: 12px;
   letter-spacing: 0.5px;
-}
+} */
 
 /* ================= ABOUT SECTION ================= */
 
@@ -671,4 +671,29 @@ html {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 10px;
+}
+
+.admin-float-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+
+  background: #8fd45a;
+  color: black;
+  font-weight: bold;
+
+  border: none;
+  padding: 14px 20px;
+  border-radius: 50px;
+
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+.admin-float-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
 }

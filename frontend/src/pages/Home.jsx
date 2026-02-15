@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
@@ -12,6 +13,7 @@ import Developer from "../components/Developer";
 
 function Home() {
   const [content, setContent] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -32,6 +34,13 @@ function Home() {
       <Developer />
       <Construction data={content.constructionUpdates} />
       <FAQ />
+
+      <button
+        className="admin-float-btn"
+        onClick={() => navigate("/admin-login")}
+      >
+        Admin
+      </button>
     </>
   );
 }

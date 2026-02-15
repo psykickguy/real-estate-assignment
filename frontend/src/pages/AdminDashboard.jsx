@@ -1,10 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+
+import { useNavigate } from "react-router-dom";
+
 import AdminSidebar from "../components/AdminSidebar";
 
 function AdminDashboard() {
   const [section, setSection] = useState("hero");
   const [content, setContent] = useState({});
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -179,6 +183,9 @@ function AdminDashboard() {
             ))}
         </div>
       </div>
+      <button className="admin-float-btn" onClick={() => navigate("/")}>
+        View Changes
+      </button>
     </div>
   );
 }

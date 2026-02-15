@@ -71,8 +71,7 @@ function Hero({ data }) {
               </svg>
 
               <div className="location-text">
-                <div className="address-line1">{data.locationLine1}</div>
-                <div className="address-line2">{data.locationLine2}</div>
+                <div className="address-line">{data.location}</div>
               </div>
             </div>
           </div>
