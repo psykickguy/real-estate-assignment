@@ -17,7 +17,7 @@ function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/content")
+      .get("https://real-estate-assignment.onrender.com/content")
       .then((res) => setContent(res.data))
       .catch((err) => console.log(err));
   }, []);

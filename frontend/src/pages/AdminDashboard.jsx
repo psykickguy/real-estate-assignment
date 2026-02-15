@@ -12,12 +12,15 @@ function AdminDashboard() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8080/content")
+      .get("https://real-estate-assignment.onrender.com/content")
       .then((res) => setContent(res.data || {}));
   }, []);
 
   const handleSave = async () => {
-    await axios.put("http://localhost:8080/content", content);
+    await axios.put(
+      "https://real-estate-assignment.onrender.com/content",
+      content,
+    );
     alert("Content Updated!");
   };
 
