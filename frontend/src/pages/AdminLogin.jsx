@@ -26,26 +26,33 @@ function AdminLogin() {
   };
 
   return (
-    <div className="admin-login">
-      <h2>Admin Login</h2>
+    <div className="admin-login-page">
+      <div className="admin-login-card">
+        <h2>Admin Panel</h2>
+        <p className="login-subtitle">Login to manage website content</p>
 
-      <form onSubmit={handleLogin}>
-        <input
-          type="email"
-          placeholder="Email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
+        <form onSubmit={handleLogin}>
+          <input
+            type="email"
+            placeholder="Admin Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
 
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
 
-        <button type="submit">Login</button>
-      </form>
+          <button type="submit" className="login-btn">
+            Login
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

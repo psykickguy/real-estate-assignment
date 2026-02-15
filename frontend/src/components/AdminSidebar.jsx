@@ -1,13 +1,27 @@
-function AdminSidebar({ setSection }) {
+function AdminSidebar({ section, setSection }) {
+  const items = [
+    "hero",
+    "aboutProject",
+    "amenities",
+    "connectivity",
+    "constructionUpdates",
+    "developer",
+    "faqs",
+  ];
+
   return (
-    <div style={{ width: "200px", background: "#f2f2f2", padding: "20px" }}>
-      <p onClick={() => setSection("hero")}>Hero</p>
-      <p onClick={() => setSection("aboutProject")}>About</p>
-      <p onClick={() => setSection("amenities")}>Amenities</p>
-      <p onClick={() => setSection("connectivity")}>Connectivity</p>
-      <p onClick={() => setSection("constructionUpdates")}>Construction</p>
-      <p onClick={() => setSection("developer")}>Developer</p>
-      <p onClick={() => setSection("faqs")}>FAQ</p>
+    <div className="admin-sidebar">
+      <h3>Admin Panel</h3>
+
+      {items.map((item) => (
+        <p
+          key={item}
+          className={section === item ? "active" : ""}
+          onClick={() => setSection(item)}
+        >
+          {item}
+        </p>
+      ))}
     </div>
   );
 }

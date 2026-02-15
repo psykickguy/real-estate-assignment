@@ -18,73 +18,82 @@ function AdminDashboard() {
   };
 
   return (
-    <div style={{ display: "flex" }}>
-      <AdminSidebar setSection={setSection} />
+    <div className="admin-layout">
+      <AdminSidebar section={section} setSection={setSection} />
 
-      <div style={{ padding: "20px", flex: 1 }}>
-        <h2>Edit {section}</h2>
+      <div className="admin-content">
+        <div className="admin-header">
+          <h2>Edit {section}</h2>
+          <button onClick={handleSave} className="save-btn">
+            Save Changes
+          </button>
+        </div>
 
-        {section === "hero" && (
-          <>
-            <input
-              placeholder="Title"
-              value={content?.hero?.title || ""}
-              onChange={(e) =>
-                setContent({
-                  ...content,
-                  hero: { ...content.hero, title: e.target.value },
-                })
-              }
-            />
+        <div className="admin-form">
+          {/* HERO */}
+          {section === "hero" && (
+            <>
+              <input
+                placeholder="Title"
+                value={content?.hero?.title || ""}
+                onChange={(e) =>
+                  setContent({
+                    ...content,
+                    hero: { ...content.hero, title: e.target.value },
+                  })
+                }
+              />
 
-            <input
-              placeholder="Tagline"
-              value={content?.hero?.tagline || ""}
-              onChange={(e) =>
-                setContent({
-                  ...content,
-                  hero: { ...content.hero, tagline: e.target.value },
-                })
-              }
-            />
+              <input
+                placeholder="Tagline"
+                value={content?.hero?.tagline || ""}
+                onChange={(e) =>
+                  setContent({
+                    ...content,
+                    hero: { ...content.hero, tagline: e.target.value },
+                  })
+                }
+              />
 
-            <input
-              placeholder="Price 1"
-              value={content?.hero?.price1 || ""}
-              onChange={(e) =>
-                setContent({
-                  ...content,
-                  hero: { ...content.hero, price1: e.target.value },
-                })
-              }
-            />
+              <input
+                placeholder="Price 1"
+                value={content?.hero?.price1 || ""}
+                onChange={(e) =>
+                  setContent({
+                    ...content,
+                    hero: { ...content.hero, price1: e.target.value },
+                  })
+                }
+              />
 
-            <input
-              placeholder="Price 2"
-              value={content?.hero?.price2 || ""}
-              onChange={(e) =>
-                setContent({
-                  ...content,
-                  hero: { ...content.hero, price2: e.target.value },
-                })
-              }
-            />
+              <input
+                placeholder="Price 2"
+                value={content?.hero?.price2 || ""}
+                onChange={(e) =>
+                  setContent({
+                    ...content,
+                    hero: { ...content.hero, price2: e.target.value },
+                  })
+                }
+              />
 
-            <input
-              placeholder="Location"
-              value={content?.hero?.location || ""}
-              onChange={(e) =>
-                setContent({
-                  ...content,
-                  hero: { ...content.hero, location: e.target.value },
-                })
-              }
-            />
-          </>
-        )}
-        {section === "aboutProject" && (
-          <>
+              <input
+                placeholder="Location"
+                value={content?.hero?.location || ""}
+                onChange={(e) =>
+                  setContent({
+                    ...content,
+                    hero: { ...content.hero, location: e.target.value },
+                  })
+                }
+              />
+            </>
+          )}
+
+          {/* ABOUT */}
+          {section === "aboutProject" && (
             <textarea
+              rows="6"
               placeholder="About Description"
               value={content?.aboutProject?.description || ""}
               onChange={(e) =>
@@ -97,25 +106,11 @@ function AdminDashboard() {
                 })
               }
             />
-          </>
-        )}
-        {section === "amenities" && (
-          <>
-            <input
-              placeholder="Heading"
-              value={content?.amenities?.heading || ""}
-              onChange={(e) =>
-                setContent({
-                  ...content,
-                  amenities: {
-                    ...content.amenities,
-                    heading: e.target.value,
-                  },
-                })
-              }
-            />
+          )}
 
-            {content?.amenities?.items?.map((item, i) => (
+          {/* AMENITIES */}
+          {section === "amenities" &&
+            content?.amenities?.items?.map((item, i) => (
               <input
                 key={i}
                 value={item.title}
@@ -133,12 +128,11 @@ function AdminDashboard() {
                 }}
               />
             ))}
-          </>
-        )}
-        {section === "constructionUpdates" && (
-          <>
-            {content?.constructionUpdates?.map((item, i) => (
-              <div key={i}>
+
+          {/* CONSTRUCTION */}
+          {section === "constructionUpdates" &&
+            content?.constructionUpdates?.map((item, i) => (
+              <div key={i} className="double-input">
                 <input
                   value={item.phase}
                   onChange={(e) => {
@@ -158,13 +152,11 @@ function AdminDashboard() {
                 />
               </div>
             ))}
-          </>
-        )}
 
-        {section === "faqs" && (
-          <>
-            {content?.faqs?.map((item, i) => (
-              <div key={i}>
+          {/* FAQ */}
+          {section === "faqs" &&
+            content?.faqs?.map((item, i) => (
+              <div key={i} className="faq-block">
                 <input
                   value={item.question}
                   onChange={(e) => {
@@ -175,6 +167,7 @@ function AdminDashboard() {
                 />
 
                 <textarea
+                  rows="3"
                   value={item.answer}
                   onChange={(e) => {
                     const updated = [...content.faqs];
@@ -184,12 +177,7 @@ function AdminDashboard() {
                 />
               </div>
             ))}
-          </>
-        )}
-
-        <button onClick={handleSave} className="btn">
-          Save Changes
-        </button>
+        </div>
       </div>
     </div>
   );

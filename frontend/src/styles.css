@@ -503,3 +503,172 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* ================= ADMIN LOGIN ================= */
+
+.admin-login-page {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d7e8e5;
+}
+
+.admin-login-card {
+  background: white;
+  padding: 50px 40px;
+  width: 400px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.admin-login-card h2 {
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.login-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.admin-login-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-login-card input {
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.admin-login-card input:focus {
+  outline: none;
+  border-color: #8fd45a;
+  box-shadow: 0 0 0 2px rgba(143, 212, 90, 0.2);
+}
+
+.login-btn {
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background: #8fd45a;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.login-btn:hover {
+  background: #79c23f;
+}
+
+/* ===== ADMIN LAYOUT ===== */
+
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f6f8;
+}
+
+/* ===== SIDEBAR ===== */
+
+.admin-sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100vh; /* FULL HEIGHT */
+  width: 230px;
+  background: #1f2937;
+  color: white;
+  padding: 30px 20px;
+  overflow-y: auto; /* Scroll if needed */
+}
+
+.admin-sidebar h3 {
+  margin-bottom: 25px;
+}
+
+.admin-sidebar p {
+  padding: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.2s;
+  text-transform: capitalize;
+}
+
+.admin-sidebar p:hover {
+  background: #374151;
+}
+
+.admin-sidebar p.active {
+  background: #8fd45a;
+  color: black;
+  font-weight: bold;
+}
+
+/* ===== CONTENT AREA ===== */
+
+.admin-content {
+  margin-left: 230px; /* SAME WIDTH AS SIDEBAR */
+  padding: 40px;
+  flex: 1;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.save-btn {
+  background: #8fd45a;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.save-btn:hover {
+  background: #79c23f;
+}
+
+/* ===== FORM ===== */
+
+.admin-form {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-form input,
+.admin-form textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.double-input {
+  display: flex;
+  gap: 15px;
+}
+
+.faq-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
