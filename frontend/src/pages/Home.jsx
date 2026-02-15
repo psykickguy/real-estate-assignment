@@ -4,8 +4,8 @@ import AboutProject from "../components/AboutProject";
 import Amenities from "../components/Amenities";
 import Connectivity from "../components/Connectivity";
 import Construction from "../components/Construction";
-// import FAQ from "../components/FAQ";
-// import Developer from "../components/Developer";
+import FAQ from "../components/FAQ";
+import Developer from "../components/Developer";
 
 function Home() {
   return (
@@ -15,9 +15,9 @@ function Home() {
       <AboutProject />
       <Connectivity />
       <Amenities />
+      <Developer />
       <Construction />
-      {/* <Developer /> */}
-      {/* <FAQ /> */}
+      <FAQ />
     </>
   );
 }
